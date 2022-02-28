@@ -1,0 +1,288 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "SwiftCloud API",
+    "description": "An API for keeping track of how many plays your fav Taylor Swift songs get!\n(by Stas Vas)",
+    "version": "1.0.0"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "paths": {
+    "/songs": {
+      "get": {
+        "description": "",
+        "tags": [
+          "songs"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "pageSize",
+            "description": "pageSize",
+            "type": "number",
+            "in": "query"
+          },
+          {
+            "name": "pageNumber",
+            "description": "pageNumber",
+            "type": "number",
+            "in": "query"
+          },
+          {
+            "name": "sortBy",
+            "description": "sortBy",
+            "type": "string",
+            "in": "query",
+            "enum": ["songId", "songName", "artist", "writer", "album", "releaseYear"]
+          },
+          {
+            "name": "sortOrder",
+            "description": "sortOrder",
+            "type": "string",
+            "in": "query",
+            "enum": ["asc", "desc"]
+          },
+          {
+            "name": "songName",
+            "description": "songName",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "artist",
+            "description": "artist",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "writer",
+            "description": "writer",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "album",
+            "description": "album",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "releaseYear",
+            "description": "releaseYear",
+            "type": "number",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/songs/{songId}": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "songs"
+        ],
+        "parameters": [
+          {
+            "name": "songId",
+            "in": "path",
+            "required": true,
+            "type": "number",
+            "description": "songId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/song-play-counts": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "song-play-counts"
+        ],
+        "parameters": [
+          {
+            "name": "pageSize",
+            "description": "pageSize",
+            "type": "number",
+            "in": "query"
+          },
+          {
+            "name": "pageNumber",
+            "description": "pageNumber",
+            "type": "number",
+            "in": "query"
+          },
+          {
+            "name": "sortBy",
+            "description": "sortBy",
+            "type": "string",
+            "in": "query",
+            "enum": ["songId", "songName", "artist", "writer", "album", "releaseYear"]
+          },
+          {
+            "name": "sortOrder",
+            "description": "sortOrder",
+            "type": "string",
+            "in": "query",
+            "enum": ["asc", "desc"]
+          },
+          {
+            "name": "songName",
+            "description": "songName",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "artist",
+            "description": "artist",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "writer",
+            "description": "writer",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "album",
+            "description": "album",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "releaseYear",
+            "description": "releaseYear",
+            "type": "number",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/song-play-counts/top": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "song-play-counts"
+        ],
+        "parameters": [
+          {
+            "name": "playYear",
+            "description": "playYear",
+            "type": "number",
+            "in": "query"
+          },
+          {
+            "name": "topN",
+            "description": "topN",
+            "type": "number",
+            "in": "query"
+          },
+          {
+            "name": "sortByMonth",
+            "description": "sortByMonth",
+            "type": "string",
+            "in": "query",
+            "enum": ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"]
+          },
+          {
+            "name": "sortOrder",
+            "description": "sortOrder",
+            "type": "string",
+            "in": "query",
+            "enum": ["desc", "asc"]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/song-play-counts/{songId}": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "song-play-counts"
+        ],
+        "parameters": [
+          {
+            "name": "songId",
+            "in": "path",
+            "required": true,
+            "type": "number",
+            "description": "songId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  }
+}
