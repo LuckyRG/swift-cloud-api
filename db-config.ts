@@ -7,12 +7,7 @@ const dbConnectionString =
 
 const dbConnectionPool = new Pool({
   connectionString: isProduction ? process.env.DATABASE_URL : process.env.DB_CONNECTION_STRING,
-  // ssl: isProduction,
-  ssl: isProduction ?
-  true:
-  {
-    rejectUnauthorized: false
-  }
+  ssl: { rejectUnauthorized: false }
 })
 
 dbConnectionPool.on('connect', () => {
