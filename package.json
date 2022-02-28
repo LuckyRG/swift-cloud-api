@@ -4,7 +4,7 @@
   "description": "An API for keeping track of how many plays your fav Taylor Swift songs get!",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && nodemon --unhandled-rejections=strict ./dist/app.js",
+    "start": "tsc && node --unhandled-rejections=strict ./dist/app.js",
     "swagger-autogen": "node ./swagger.js"
   },
   "keywords": [
