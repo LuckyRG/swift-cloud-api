@@ -12,7 +12,7 @@ import swaggerFile from './swagger/swagger-output.json';
 
 const app: express.Application = express();
 const server: http.Server = http.createServer(app);
-const port = 3000;
+const port = process.env.PORT;
 
 /** Debugging purposes **/
 const routes: Array<CommonRoutesConfig> = [];
