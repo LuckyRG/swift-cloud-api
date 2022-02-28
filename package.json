@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "description": "An API for keeping track of how many plays your fav Taylor Swift songs get!",
   "main": "index.js",
-  "engines": { "node": "14.17.5" },
   "scripts": {
-	"start": "node dist/app.js",
-    "postinstall": "tsc && mv -i -v public dist/ && rm -v -rf src",
+    "start": "node dist/app.js",
+    "postinstall": "tsc",
     "watch-node": "nodemon dist/app.js",
     "watch-ts": "tsc -w",
     "deploy": "git add . && git commit -m Heroku && git push heroku master"
@@ -59,7 +58,7 @@
     "ts-node": "^10.5.0",
     "typescript": "^4.5.5"
   },
-    "jest": {
+  "jest": {
     "moduleFileExtensions": [
       "ts",
       "tsx",
