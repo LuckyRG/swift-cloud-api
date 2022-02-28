@@ -5,7 +5,7 @@
     "description": "An API for keeping track of how many plays your fav Taylor Swift songs get!\n(by Stas Vas)",
     "version": "1.0.0"
   },
-  "host": "https://swift-cloud-api.herokuapp.com/",
+  "host": "swift-cloud-api.herokuapp.com",
   "basePath": "/",
   "schemes": [
     "https"
